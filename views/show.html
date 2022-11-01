@@ -1,1 +1,25 @@
-<h1>view: show</h1>
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <title>Real-time Slides Tutorial | Show</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div id="slide">
+      <h1>Real-time Slides ⏱</h1>
+      <p>Improvise your presentations, one slide at a time.</p>
+    </div>
+    <script type="text/javascript">
+  
+      const socket = io();
+  
+      socket.on('update slide', (html) => {
+        document.querySelector('#slide').innerHTML = html;
+      })
+  
+    </script>
+</body>
+
+</html>
